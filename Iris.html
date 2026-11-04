@@ -12,21 +12,22 @@ button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
 button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 [hidden]{display:none!important}
 .iris-shell{height:100%;width:100%;display:grid;grid-template-columns:var(--sidebar-width) minmax(0,1fr);grid-template-rows:minmax(0,1fr);border:0;border-radius:0;overflow:hidden;background:var(--bg)}
-.sidebar{grid-row:1;display:flex;flex-direction:column;background:#151515;border-right:1px solid #292929;min-height:0;overflow-y:auto;scrollbar-width:none;z-index:2}
-.identity{min-height:80px;display:flex;align-items:center;justify-content:center;padding:16px 0}
-.wordmark{font-size:18px;letter-spacing:-.045em;font-weight:500;white-space:nowrap}
+.sidebar{grid-row:1;display:flex;flex-direction:column;background:#111111;border-right:1px solid #282828;min-height:0;overflow-y:auto;scrollbar-width:none;z-index:2}
+.identity{min-height:80px;display:flex;align-items:center;justify-content:center;padding:16px 0;margin-bottom:12px;border-bottom:1px solid #242424}
+.wordmark{font-size:15px;letter-spacing:-.045em;font-weight:500;white-space:nowrap;color:#d4d4d4}
 .monogram{display:none}
-.tabs{display:flex;flex-direction:column;padding:0 7px;gap:7px}
-.nav-button{display:flex;align-items:center;justify-content:center;width:100%;min-height:46px;padding:0;color:#a5a5a5;border:1px solid transparent;border-radius:4px;background:transparent;transition:background .15s,color .15s,border-color .15s}
-.nav-button svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.tabs{display:flex;flex-direction:column;padding:0 8px;gap:8px}
+.nav-button{position:relative;display:flex;align-items:center;justify-content:center;width:100%;min-height:44px;padding:0;color:#989898;border:1px solid transparent;border-radius:7px;background:transparent;transition:background .15s,color .15s,border-color .15s}
+.nav-button svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 .nav-button:hover{background:#202020;color:#eee}
-.nav-button[aria-selected="true"]{color:#eee;background:#252525;border-color:#3b3b3b}
+.nav-button[aria-selected="true"]{color:#f2f2f2;background:#262626;border-color:#3e3e3e;box-shadow:inset 0 1px 0 #ffffff08}
+.nav-button[aria-selected="true"]::before{content:"";position:absolute;left:-9px;top:13px;bottom:13px;width:2px;background:#dedede;border-radius:0 2px 2px 0}
 .nav-text{display:none}
 .sidebar-bottom{margin-top:auto;padding:18px 8px}
-.live-session{border-top:1px solid #333;border-bottom:1px solid #333;padding:13px 0;margin-bottom:18px;text-align:center}
+.live-session{border:1px solid #343434;border-radius:6px;background:#1c1c1c;padding:12px 0;margin-bottom:18px;text-align:center}
 .session-caption{display:flex;align-items:center;justify-content:center;font-size:0;line-height:1.8}
 .session-dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0}
-.session-time{font-size:13px;letter-spacing:-.06em;margin-top:8px;color:#eaeaea;font-variant-numeric:tabular-nums}
+.session-time{font-size:11px;letter-spacing:-.04em;margin-top:8px;color:#eaeaea;font-variant-numeric:tabular-nums}
 .session-detail{display:none}
 .local-note{display:flex;align-items:center;justify-content:center;font-size:0;line-height:1.7;color:#aaa}
 .local-note svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.3}
@@ -34,7 +35,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
 .workspace-panel{grid-row:1;grid-column:2;position:relative;overflow:auto;min-height:0;min-width:0;background:var(--bg);overscroll-behavior:contain;scrollbar-color:#4a4a4a var(--bg);scrollbar-width:thin;isolation:isolate}
 .workspace-panel:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 noscript{position:fixed;inset:20%;z-index:20;padding:32px;background:#222;color:white;border:1px solid #555;line-height:1.8}
-@media(max-width:650px){:root{--sidebar-width:56px}.identity{min-height:72px}.wordmark{font-size:16px}.tabs{padding:0 5px}.nav-button{min-height:44px}.sidebar-bottom{padding-inline:5px}}
+@media(max-width:650px){:root{--sidebar-width:56px}.identity{min-height:64px}.wordmark{font-size:14px}.tabs{padding:0 6px}.nav-button{min-height:44px}.nav-button[aria-selected="true"]::before{left:-7px}.sidebar-bottom{padding-inline:5px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 </style></head><body>
 <!-- Embedded IBM Plex Mono font license:
@@ -1019,60 +1020,231 @@ input::placeholder{color:#858585}option{background:#1c1c1c;color:#eee}
 
 </div></template>
 <template id="iris-theme"><style>
-/* Shared terminal palette and typography. Mathematical fonts stay untouched. */
-:host{--bg:#0d0d0d;--panel:#171717;--text:#e5e5e5;--muted:#a5a5a5;--line:#333333;--strong-line:#656565;--ink:#e5e5e5;--cream:#e0e0e0;--edge:#4d4d4d;background:var(--bg);color:var(--text);font-family:var(--font);font-weight:400;letter-spacing:0;background-image:none}
-button,input,select,textarea{font-family:inherit;letter-spacing:0;accent-color:#ccc}
-button{font-weight:400}
-h1,h2,h3{font-family:inherit;letter-spacing:-.025em;font-weight:400}
-button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #c2c2c2;outline-offset:3px}
-::selection{background:#5c5c5c;color:#fff}
-.kicker,.eyebrow,.label,.collection-label,.focus-kicker{color:#aaaaaa;letter-spacing:.02em;text-transform:lowercase}
+/* Shared workspace tokens. Keep the embedded math fonts and scene untouched. */
+:host {
+  --bg:#0d0d0d; --panel:#151515; --raised:#1c1c1c;
+  --text:#e5e5e5; --muted:#a5a5a5; --line:#303030; --strong-line:#606060;
+  --ink:var(--text); --cream:#e5e5e5; --edge:#454545;
+  background:var(--bg); color:var(--text); background-image:none;
+  font-family:var(--font); font-weight:400; letter-spacing:0;
+}
+button,input,select,textarea {font-family:inherit;letter-spacing:0;accent-color:#d5d5d5}
+button {font-weight:400;transition:background .15s,border-color .15s,color .15s}
+h1,h2,h3 {font-family:inherit;letter-spacing:-.035em;font-weight:500}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible,summary:focus-visible {
+  outline:2px solid #c2c2c2;outline-offset:3px;
+}
+::selection {background:#535353;color:#fff}
+.kicker,.eyebrow,.label,.collection-label,.focus-kicker {
+  color:var(--muted);letter-spacing:.025em;text-transform:lowercase;
+}
+.label,.collection-label,:host([data-tool="slot"]) #planner-title {
+  font-size:12px;line-height:1.5;font-weight:500;letter-spacing:0;text-transform:none;color:#d5d5d5;
+}
+.label::before,.collection-label::before,:host([data-tool="slot"]) #planner-title::before {
+  content:'›';display:inline-block;margin-right:10px;color:#8c8c8c;font-weight:400;
+}
+.action,.soft-button,.settings-trigger,button.quiet {
+  border:1px solid #3d3d3d;border-radius:6px;font-weight:400;
+}
+.action:not(.primary),.soft-button,button.quiet {color:#d0d0d0;background:#1a1a1a}
+.action:hover,.soft-button:hover,button.quiet:hover {background:#252525;border-color:#646464}
+.primary,.action.primary,#add-button,.primary-button {
+  background:#e5e5e5;color:#161616;border-color:#e5e5e5;font-weight:500;
+  box-shadow:0 1px 2px #0003;
+}
+.action.primary:hover,#add-button:hover,.primary-button:hover:not(:disabled) {
+  background:#fff;color:#111;border-color:#fff;
+}
+input:not([type=checkbox]):not([type=range]):not([type=file]),select,textarea {
+  background:#101010;border:1px solid #404040;border-radius:6px;
+  caret-color:#ddd;color:var(--text);transition:border-color .15s;
+}
+input::placeholder,textarea::placeholder {color:#898989}
+input:hover,select:hover,textarea:hover {border-color:#606060}
+button:disabled {box-shadow:none}
 
-.action,.soft-button,.settings-trigger,button.quiet{border-color:#444444;border-radius:5px;font-weight:400}
-.action:not(.primary),.soft-button,button.quiet{color:#cccccc;background:transparent}
-.action:hover,.soft-button:hover,button.quiet:hover{background:#242424;border-color:#767676}
-.primary,.action.primary,#add-button,.primary-button{background:#e0e0e0;color:#1f1f1f;border-color:#e0e0e0;font-weight:500}
-input:not([type=checkbox]):not([type=range]):not([type=file]),select,textarea{background:#141414;border-color:#4a4a4a;border-radius:4px;caret-color:#c9c9c9;color:#e5e5e5}
-:host([data-tool="flashcards"]) #app{max-width:1120px;padding:28px 40px 40px}
-.top{border-color:#2d2d2d;padding-bottom:20px}.collection-label{font-size:12px}
-.action{font-size:11px;text-transform:lowercase;min-height:40px}
-.action.primary:hover,#add-button:hover{background:#eeeeee;border-color:#eeeeee}
-.page{margin-top:36px}.eyebrow{font-size:12px}.deck-title{font-size:24px;letter-spacing:-.025em}
-.deck-row,.deck-row:last-child,.utility{border-color:#303030}
-.library-empty{align-items:flex-start;text-align:left;min-height:300px;margin-top:24px;border:0;border-radius:0;background:transparent;padding:32px 0}
-.library-empty h2{font-size:clamp(20px,2.4vw,28px);color:#e5e5e5}.library-empty p{color:#a5a5a5;font-size:13px}.empty-cta{margin-top:24px}
-.summary,.meta{color:#a5a5a5;letter-spacing:0}.field label{color:#c1c1c1}
-:host([data-tool="flashcards"]) h1{font-size:clamp(26px,4vw,42px)}
-:host([data-tool="habits"]) .container{background:transparent;max-width:1120px;width:100%;padding:36px 40px 40px;margin:0 auto;border:0}
-:host([data-tool="habits"]) header{border-color:#303030}.habit-date{font-size:24px;color:#e5e5e5}.label{font-size:12px}.habit-summary{color:#a5a5a5}
-.habit{background:#171717;border:1px solid #373737;border-radius:6px;padding:20px}.habit h2{font-size:17px;color:#e5e5e5}.habit p{color:#a5a5a5}.habit-actions button{border-color:#454545;background:transparent;color:#cdcdcd}.habit-actions .completed{background:#e0e0e0;color:#1f1f1f;border-color:#e0e0e0}
-.empty-state{background:transparent;border:1px solid #303030;color:#a5a5a5;border-radius:6px;text-align:left;justify-content:flex-start;padding:30px;font-size:13px;min-height:180px}
-.backup-panel{border-color:#303030}.backup-panel p{color:#a5a5a5}.backup-actions button{color:#cdcdcd;border-color:#444444;text-transform:lowercase}
-:host([data-tool="slot"]) main{padding:36px 40px 32px;max-width:1360px}
-:host([data-tool="slot"]) h1{font-size:clamp(26px,3.2vw,38px)}.intro .muted{font-size:12px;line-height:1.8}.kicker{font-size:12px}.panel{border-radius:6px}.empty{background:transparent;border-color:#373737}.view-button[aria-pressed=true]{background:#2d2d2d;border-color:#696969;color:#e0e0e0}.panel>h2{color:#c7c7c7}.pill{color:#b9b9b9;border-color:#505050}.bar div{background:#bbbbbb}.slot{border-left-color:#b7b7b7}.metric strong{color:#e0e0e0}.more-menu,dialog{background:#191919;border-color:#606060;border-radius:6px}
-/* The image stays fully visible. Contrast comes from compact, opaque controls. */
-:host([data-tool="focus"]) .background-layer{filter:none;mix-blend-mode:normal}
-:host([data-tool="focus"]) .app{min-height:100dvh;padding:26px 28px 24px;gap:32px}
+/* Flashcards: command bar, deck blocks, and a quieter reading surface. */
+:host([data-tool="flashcards"]) #app {max-width:1200px;padding:28px 40px 40px}
+.top {min-height:53px;padding-bottom:16px;border-bottom:1px solid var(--line);gap:16px}
+.top-actions,.row-actions {gap:8px}
+.action {font-size:11px;text-transform:lowercase;min-height:38px;padding:9px 12px}
+.page {margin-top:30px}
+.eyebrow {font-size:11px;margin-bottom:18px}
+:host([data-tool="flashcards"]) h1 {font-size:clamp(24px,3.2vw,36px);line-height:1.25;margin-bottom:18px}
+.decks {display:grid;gap:10px;margin-top:0}
+.deck-row,.deck-row:last-child {
+  padding:22px 24px;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  transition:background .15s,border-color .15s;
+}
+.deck-row:hover,.deck-row:focus-within {background:#1a1a1a;border-color:#505050}
+.deck-title {font-size:18px;line-height:1.5;letter-spacing:-.025em;font-weight:500;color:#e5e5e5}
+.deck-row .summary {gap:8px;min-width:0}
+.deck-row .summary span {padding:5px 8px;background:#202020;border:1px solid #353535;border-radius:4px;font-size:10px}
+.deck-row .summary span:last-child {color:#e0e0e0}
+.summary,.meta {color:var(--muted);letter-spacing:0;font-variant-numeric:tabular-nums}
+.library-empty {
+  align-items:center;justify-content:center;text-align:center;min-height:270px;margin-top:0;
+  border:1px dashed #383838;border-radius:8px;background:#121212;padding:32px 24px;
+}
+.library-empty h2 {font-size:20px;color:#d8d8d8;letter-spacing:-.035em;margin:0}
+.library-empty p {color:var(--muted);font-size:12px}
+.empty-cta {margin-top:22px}
+.utility {margin-top:24px;padding-top:20px;border-color:var(--line);gap:8px}
+.utility .action {background:transparent;border-color:#343434;color:#aaa}
+.field {margin-top:24px}
+.field label {color:#bdbdbd}
+.line-input {font-size:20px}
+.bulk-input {font-size:13px;line-height:1.9}
+.deck-tools {margin-top:24px;gap:8px}
+.cards {margin-top:28px}
+.card-row,.card-row:last-child {padding:24px;border:1px solid var(--line);background:var(--panel);border-radius:8px;margin-bottom:12px}
+.card-actions {gap:8px;padding-top:16px;border-top:1px solid #292929}
+.card-actions .action {font-size:10px;min-height:34px;padding:7px 10px}
+.study-center {margin:24px 0;padding:48px 28px;background:var(--panel);border:1px solid var(--line);border-radius:8px}
+.study-front {font-size:clamp(26px,4vw,48px);letter-spacing:-.04em}
+.study-back {font-size:clamp(22px,3.2vw,36px);border-color:var(--line)}
+.study-actions {border-color:var(--line)}
+.study-actions .row-actions {gap:8px;flex-wrap:wrap}
 
-.scene-toggle,.ambient-indicator,.settings-trigger,.spotify-player,.reset-button{background:#151515;border-color:#515151;backdrop-filter:none;border-radius:6px}
-.scene-toggle{min-height:40px;margin-left:auto;font-size:11px}.ambient-indicator{font-size:11px;order:0;margin:0}
-.timer-area{width:min(100%,380px);padding:26px 22px 24px;background:#121212;border:1px solid #515151;border-radius:9px;box-shadow:0 8px 32px #0003;text-shadow:none;transform:none}
-.mode-label{background:none;border:0;border-radius:0;backdrop-filter:none;font-size:11px;letter-spacing:.08em;padding:0;min-width:0;color:#c2c2c2}.mode-dot{background:#c2c2c2}
-.countdown{font-size:clamp(54px,7vw,88px);font-weight:400;letter-spacing:-.06em;margin:13px 0 4px;color:#efefef}.countdown.long-time{font-size:clamp(40px,5.6vw,68px)}
-.cycle-label{font-size:10px;color:#a5a5a5;letter-spacing:.02em}.cycle-label::before{color:#898989;letter-spacing:0}.progress-track{margin:19px auto 22px;width:140px;background:#393939}.progress-fill{background:#c2c2c2}.start-button{min-width:130px;min-height:44px;font-size:12px}.reset-button{height:44px;width:44px}
-.timer-hint{color:#a5a5a5;font-size:10px;line-height:1.8;letter-spacing:0;margin-top:17px;min-height:18px}
-.spotify-player{width:300px}.spotify-connect{height:60px}.connect-copy strong{font-size:12px}.connect-copy small{font-size:10px;color:#a5a5a5}.spotify-details{background:#1a1a1a;border-color:#606060;backdrop-filter:none}.settings-trigger{font-size:11px}.settings-trigger:hover{background:#2b2b2b}
-.settings-dialog{background:#1a1a1a;backdrop-filter:none}.settings-dialog::backdrop{background:transparent;backdrop-filter:none}.settings-heading{background:#212121;border-color:#444444}.settings-heading h2,.player-heading h2{font-family:inherit;letter-spacing:-.025em}.settings-heading p,.small,.settings-footnote{color:#b3b3b3}.settings-section{border-color:#444444}.section-heading{color:#c7c7c7}.settings-dialog option{background:#1a1a1a}.toast{background:#1a1a1a}
-@media(min-width:1600px){:host([data-tool="flashcards"]) #app,:host([data-tool="habits"]) .container,:host([data-tool="slot"]) main{padding-inline:48px}}
-@media(max-width:1000px){:host([data-tool="flashcards"]) #app,:host([data-tool="habits"]) .container,:host([data-tool="slot"]) main{padding:28px}}
-@media(max-width:780px){:host([data-tool="focus"]) .app{min-height:100dvh}}
-@media(max-width:650px){:host([data-tool="flashcards"]) #app,:host([data-tool="habits"]) .container,:host([data-tool="slot"]) main{padding:24px 18px 32px}.habit-date{font-size:21px}.empty-state{padding:22px}.library-empty{padding:20px 0;min-height:280px}.library-empty p{font-size:12px}.action{font-size:10px}.deck-title{font-size:22px}:host([data-tool="focus"]) .app{min-height:100dvh;padding:18px 14px;gap:28px}.masthead{gap:10px}.scene-toggle{font-size:10px;min-height:38px}.timer-area{padding:24px 12px;width:min(100%,350px)}.countdown{font-size:clamp(48px,13vw,76px)}.countdown.long-time{font-size:clamp(34px,10vw,58px)}.timer-hint{font-size:10px}.start-button{min-width:112px;font-size:11px}.spotify-player{width:100%}.spotify-details{width:min(360px,calc(100dvw - var(--sidebar-width) - 28px))}.settings-trigger{width:44px;margin-left:auto}.scene-toggle{order:1}.ambient-indicator{order:2}.timer-controls{gap:10px}}
-@media(max-height:700px) and (min-width:651px){:host([data-tool="focus"]) .app{gap:18px;padding:20px}.timer-area{padding:20px;width:340px}.countdown{font-size:70px}.timer-hint{margin-top:12px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+/* Habits: a compact input block and consistent completion controls. */
+:host([data-tool="habits"]) .container {
+  background:transparent;max-width:1200px;width:100%;padding:28px 40px 40px;margin:0 auto;border:0;
+}
+:host([data-tool="habits"]) header {min-height:53px;padding:0 0 20px;border-color:var(--line)}
+.label {margin-bottom:16px}
+.habit-date {font-size:clamp(20px,2.3vw,26px);color:#e5e5e5;letter-spacing:-.035em;line-height:1.4}
+.habit-summary {color:#b5b5b5;font-size:11px;padding:6px 9px;background:#1b1b1b;border:1px solid #333;border-radius:4px;align-self:flex-end}
+:host([data-tool="habits"]) .add-panel {margin:24px 0;padding:12px;background:var(--panel);border:1px solid var(--line);border-radius:8px;gap:10px}
+#habit-name {font-size:12px}
+#add-button {font-size:11px;text-transform:lowercase;border-radius:6px}
+#habit-list {gap:10px;padding-bottom:24px}
+.habit {background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:22px 24px}
+.habit h2 {font-size:16px;color:var(--text);font-weight:500;letter-spacing:-.025em}
+.habit p {color:var(--muted)}
+.habit-actions button {border-color:#3d3d3d;background:#1c1c1c;color:#ccc;border-radius:5px;text-transform:lowercase;letter-spacing:0}
+.habit-actions button:hover {background:#292929;border-color:#666;color:#eee}
+.habit-actions .completed {background:#e5e5e5;color:#161616;border-color:#e5e5e5}
+.habit:has(.completed) {border-color:#484848}
+.empty-state {background:#121212;border:1px dashed #383838;color:var(--muted);border-radius:8px;text-align:center;justify-content:center;padding:28px;font-size:12px;min-height:180px}
+.backup-panel {border-color:var(--line);padding-top:20px}
+.backup-panel p {color:var(--muted);max-width:680px}
+.backup-actions {gap:8px}
+.backup-actions button {color:#aaa;border-color:#343434;text-transform:lowercase;letter-spacing:0;min-height:36px}
 
-/* Consistent, capitalized tool labels. */
-.label,.collection-label,:host([data-tool="slot"]) #planner-title{font-family:inherit;font-size:12px;line-height:1.5;font-weight:500;letter-spacing:.02em;text-transform:none;color:#aaa}
-:host([data-tool="slot"]) #planner-title{margin:0 0 12px}
+/* Planner: segmented views, inset metrics, and distinct time blocks. */
+:host([data-tool="slot"]) main {padding:28px 40px 32px;max-width:1360px}
+:host([data-tool="slot"]) #planner-title {margin:0;font-family:inherit}
+.intro {min-height:53px;display:flex;align-items:flex-start;padding-top:9px;margin-bottom:20px;border-bottom:1px solid var(--line)}
+.planner-bar {padding-bottom:20px;border-color:var(--line);gap:16px}
+.view-nav {padding:4px;gap:4px;background:#151515;border:1px solid #303030;border-radius:8px}
+.view-button {min-height:32px;padding:6px 13px;border-radius:5px;color:#aaa}
+.view-button[aria-pressed=true] {background:#2c2c2c;border-color:#454545;color:#f0f0f0;box-shadow:0 1px 3px #0004}
+.view-button:hover {color:#eee;background:#222;border-color:#393939}
+.view-button span {padding:1px 4px;background:#383838;border-radius:3px;color:#ddd}
+.panel {border-radius:8px;border-color:var(--line);background:var(--panel);padding:22px}
+.panel>h2,.panel>.row h2 {color:#d4d4d4;font-size:12px;letter-spacing:0}
+.panel>.row:first-child {border-color:#2d2d2d}
+:host([data-tool="slot"]) .empty {background:#101010;border-color:#383838;border-radius:6px}
+.metrics {gap:12px}
+.metric+.metric {border-left:1px solid #333;padding-left:12px}
+.metric strong {color:#e5e5e5;font-size:clamp(20px,2vw,27px);letter-spacing:-.05em}
+.metric span {color:#aaa;line-height:1.6}
+.bar {height:3px;background:#333}
+.bar div {background:#d5d5d5}
+.timeline {gap:12px}
+.slot,.slot:last-child {padding:16px;background:#1b1b1b;border:1px solid #343434;border-left:2px solid #c5c5c5;border-radius:5px}
+.slot.shallow {border-left-style:dashed}
+.slot.fixed {border-left-color:#717171;background:#141414}
+.slot.completed {border-left-color:#777;background:#141414}
+.slot time {color:#b6b6b6}
+.slot h3 {font-weight:500}
+.slot .actions {gap:6px}
+.pill {color:#bebebe;border-color:#454545;background:#202020;border-radius:4px}
+.more-actions>summary {border-radius:6px;border-color:#3d3d3d;background:#1a1a1a}
+.more-menu,dialog {background:#191919;border:1px solid #505050;border-radius:9px;box-shadow:0 18px 60px #0006}
+.more-menu button {border-radius:5px}
+.more-menu button:hover {background:#292929}
+.week-card:has(.week-today) {border-color:#777;box-shadow:inset 0 2px 0 #bcbcbc}
+
+/* Focus: a small opaque instrument panel leaves the painting unmodified. */
+:host([data-tool="focus"]) .background-layer {filter:none;mix-blend-mode:normal}
+:host([data-tool="focus"]) .app {min-height:100dvh;padding:28px;gap:28px}
+.scene-toggle,.ambient-indicator,.settings-trigger,.spotify-player,.reset-button {
+  background:#161616;border-color:#484848;backdrop-filter:none;border-radius:7px;
+}
+.scene-toggle {min-height:38px;margin-left:auto;font-size:11px}
+.ambient-indicator {font-size:11px;order:0;margin:0}
+.timer-area {width:min(100%,388px);padding:28px;background:#131313;border:1px solid #505050;border-radius:12px;box-shadow:0 16px 48px #0004,inset 0 1px 0 #ffffff08;text-shadow:none;transform:none}
+.mode-label {background:none;border:0;border-radius:0;backdrop-filter:none;font-size:10px;letter-spacing:.1em;padding:0;min-width:0;color:#bfbfbf}
+.mode-dot {background:#cfcfcf}
+.countdown {font-size:clamp(54px,7vw,88px);font-weight:400;letter-spacing:-.065em;margin:16px 0 6px;color:#f0f0f0;font-variant-numeric:tabular-nums}
+.countdown.long-time {font-size:clamp(40px,5.6vw,68px)}
+.cycle-label {font-size:10px;color:#aaa;letter-spacing:.02em}
+.cycle-label::before {color:#999;letter-spacing:0}
+.progress-track {margin:22px auto;width:100%;height:2px;background:#363636}
+.progress-fill {background:#d5d5d5}
+.start-button {min-width:132px;min-height:44px;font-size:12px;border-radius:6px}
+.reset-button {height:44px;width:44px}
+.timer-controls {gap:8px}
+.timer-hint {color:#aaa;font-size:10px;line-height:1.8;letter-spacing:0;margin-top:18px;min-height:18px}
+.spotify-player {width:300px;box-shadow:0 4px 16px #0002}
+.spotify-connect {height:60px}
+.connect-copy strong {font-size:12px}
+.connect-copy small {font-size:10px;color:#aaa}
+.spotify-details {background:#191919;border-color:#505050;border-radius:9px;backdrop-filter:none}
+.settings-trigger {font-size:11px}
+.settings-trigger:hover {background:#292929}
+.settings-dialog {background:#191919;backdrop-filter:none;border-color:#505050;border-radius:10px}
+.settings-dialog::backdrop {background:transparent;backdrop-filter:none}
+:host([data-tool="focus"]) .settings-heading {background:#1f1f1f;border-color:#363636}
+:host([data-tool="focus"]) .settings-heading h2,.player-heading h2 {font-family:inherit;letter-spacing:-.035em;font-size:18px}
+:host([data-tool="focus"]) .settings-heading p,.small,.settings-footnote {color:#aaa}
+.settings-section {border-color:#363636}
+.section-heading {color:#ccc}
+.settings-dialog option {background:#191919}
+.toast {background:#1a1a1a;border-color:#505050;border-radius:7px}
+
+@media(min-width:1600px) {
+  :host([data-tool="flashcards"]) #app,:host([data-tool="habits"]) .container,:host([data-tool="slot"]) main {padding-inline:48px}
+}
+@media(max-width:1000px) {
+  :host([data-tool="flashcards"]) #app,:host([data-tool="habits"]) .container,:host([data-tool="slot"]) main {padding:28px}
+}
+@media(max-width:650px) {
+  :host([data-tool="flashcards"]) #app,:host([data-tool="habits"]) .container,:host([data-tool="slot"]) main {padding:20px 16px 32px}
+  .top {gap:12px}.page {margin-top:24px}.action {font-size:10px}
+  .deck-row,.deck-row:last-child,.card-row,.card-row:last-child {padding:18px}
+  .deck-title {font-size:17px}.deck-row .summary {flex-wrap:wrap}
+  .library-empty {min-height:240px;padding:24px 16px}.library-empty h2 {font-size:18px}
+  .study-center {padding:32px 16px}.study-actions .row-actions {gap:8px}
+  .habit-date {font-size:20px}.label {margin-bottom:12px}
+  .habit-summary {align-self:flex-start}
+  :host([data-tool="habits"]) .add-panel {padding:10px;margin:20px 0}.habit {padding:18px}
+  .habit-actions {flex-wrap:wrap}.habit-actions button {min-width:0}
+  .empty-state {padding:22px;min-height:160px}
+  .panel {padding:17px}.planner-bar {gap:14px}.view-nav {gap:2px}
+  .view-button {padding:6px;font-size:10px}.slot,.slot:last-child {padding:12px}
+  .metric strong {font-size:20px}.metric+.metric {padding-left:8px}
+  :host([data-tool="focus"]) .app {min-height:100dvh;padding:18px 14px;gap:24px}
+  .masthead {gap:10px}.scene-toggle {font-size:10px;min-height:38px;order:1}
+  .ambient-indicator {order:2}.timer-area {padding:24px 16px;width:min(100%,350px)}
+  .countdown {font-size:clamp(44px,12vw,72px)}.countdown.long-time {font-size:clamp(32px,9.5vw,56px)}
+  .start-button {min-width:112px;font-size:11px}
+  .spotify-player {width:100%}.spotify-details {width:min(360px,calc(100dvw - var(--sidebar-width) - 28px))}
+  .settings-trigger {width:44px;margin-left:auto}
+}
+@media(max-width:390px) {
+  .metric+.metric {border-left:0;padding-left:0}
+  .view-button {padding-inline:4px}
+}
+@media(max-height:700px) and (min-width:651px) {
+  :host([data-tool="focus"]) .app {gap:18px;padding:20px}
+  .timer-area {padding:20px;width:340px}.countdown {font-size:70px}.timer-hint {margin-top:12px}
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
 </style></template>
 <script>
 /**
