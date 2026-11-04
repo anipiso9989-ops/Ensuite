@@ -58,7 +58,7 @@ Use **Hide** between **Cram** and **Add Cards** to check cards to exclude from S
 
 ## Appearance
 
-Iris uses a terminal-inspired interface throughout: a warm charcoal sidebar, near-black tool surfaces, soft borders, muted sage accents, and embedded IBM Plex Mono. The shared theme covers flashcards, habits, the focus timer, and the planner, including forms and dialogs. Navigation adapts to narrow screens, keyboard focus remains visible, and reduced-motion preferences are respected.
+Iris uses a grayscale terminal interface throughout: black and gray surfaces, neutral text and icons, soft borders, and embedded IBM Plex Mono. Labels and messages are functional, with no decorative copy. The workspace fills the browser window with square edges, no outer frame or redundant app-name header, and a dark 64-pixel navigation rail (56 pixels on small screens). Hover a tool icon for its label and shortcut; keyboard navigation remains available. The shared theme covers flashcards, habits, the focus timer, and the planner, including forms and dialogs. Navigation adapts to narrow screens, keyboard focus remains visible, and reduced-motion preferences are respected.
 
 ## Validation
 
