@@ -1,10 +1,10 @@
-# StudyBuddy
+# Iris
 
-StudyBuddy combines flashcards, daily habits, a Pomodoro timer, and a day and week planner in one self-contained HTML workspace. A persistent sidebar switches between all four tools without interrupting your focus timer.
+Iris combines flashcards, daily habits, a Pomodoro timer, and a day and week planner in one self-contained HTML workspace. A persistent sidebar switches between all four tools without interrupting your focus timer.
 
 ## Getting started
 
-Download `StudyBuddy.html` and open it in a modern browser. No installation, account, or server is required. Keep using the same browser profile and file location to access your saved data.
+Download `Iris.html` and open it in a modern browser. No installation, account, or server is required. Keep using the same browser profile and file location to access your saved data. When upgrading from an older filename, export your cards, habits, and planner backups first and import them into `Iris.html` if your browser treats the renamed file as a new storage location. On the same origin, existing databases and preferences remain compatible.
 
 ## Flashcards
 
@@ -14,9 +14,9 @@ Create named decks and enter one card per line using `front::back`. Both sides s
 
 Add daily habits, mark them complete, and track consecutive-day streaks. Undo today's completion when necessary. Habits can also be renamed or deleted.
 
-## Tempo
+## Focus
 
-Set work duration, break duration, and cycle count. Start, pause, resume, or reset your session. The timer continues when you switch tools. Choose an image or GIF background, use a direct image URL, restore the default image, or switch to a plain background. Ambient recordings include rain, fireplace, river, thunderstorm, crickets, and birds. An optional Spotify player accepts supported Spotify links and remembers your selection after reload.
+Set work duration, break duration, and cycle count. Start, pause, resume, or reset your session. The timer continues when you switch tools. Choose an image or GIF background, use a direct image URL, restore the original painting, or switch to a plain background. The supplied painting is embedded unchanged and shown at its original color and brightness, with no tint, desaturation, dimming, or blur. The image fills the timer area and may crop to fit the window; compact dark controls provide their own contrast. Ambient recordings include rain, fireplace, river, thunderstorm, crickets, and birds. An optional Spotify player accepts supported Spotify links and remembers your selection after reload.
 
 ## Slot
 
@@ -46,18 +46,24 @@ Use `Alt+1`, `Alt+2`, `Alt+3`, and `Alt+4` to switch to Flashcards, Habits, Focu
 
 Flashcards, habits, and Slot save in your browser. Export JSON backups regularly, especially before moving devices, clearing browser storage, or importing data. Each tool uses its own compatible backup format. Importing replaces that tool's current data. Slot's backup controls are under **Settings → Backups & storage**.
 
-Slot backups include task recurrence rules and occurrence history, permanent weekday availability, date overrides, kept times, rollover metadata, single-block preferences, checklists, and recurring commitments. Current standalone Slot and StudyBuddy backups are interchangeable. Older backups still load with no task recurrences or weekday rules; timed tasks keep their chunk settings, and checklist blocks default to a single-session preference.
+Slot backups include task recurrence rules and occurrence history, permanent weekday availability, date overrides, kept times, rollover metadata, single-block preferences, checklists, and recurring commitments. Current standalone Slot and Iris backups are interchangeable. Older backups still load with no task recurrences or weekday rules; timed tasks keep their chunk settings, and checklist blocks default to a single-session preference.
 
 ## Offline use
 
 The core tools, fonts, Markdown renderer, and math support are embedded. Spotify, streamed ambient sounds, and remote background URLs require internet. Focus timer settings, custom backgrounds, and ambient selections last for the current page session and reset after reloading. Spotify links persist unless you clear the player or turn off **Remember my Spotify link**.
 
----
-
-You can download the individual apps from this repository as well, if you want to use them separately. 
+## Hidden flashcards
 
 Use **Hide** between **Cram** and **Add Cards** to check cards to exclude from Study, Cram, and spaced repetition, press **Enter** to finish, and restore cards individually by unchecking them in Hide mode or all at once with **Unhide All**.
 
+## Appearance
+
+Iris uses a terminal-inspired interface throughout: a warm charcoal sidebar, near-black tool surfaces, soft borders, muted sage accents, and embedded IBM Plex Mono. The shared theme covers flashcards, habits, the focus timer, and the planner, including forms and dialogs. Navigation adapts to narrow screens, keyboard focus remains visible, and reduced-motion preferences are respected.
+
 ## Validation
 
-Run `node --test tests/*.test.cjs` for planner, lifecycle, automatic scheduling, multi-day rollover, recurrence/history, availability precedence, backup validation, and standalone/bundled parity checks. With Playwright and Chromium available, run `node tests/slot-ui.cjs`, `node tests/slot-task-ui.cjs`, and `node tests/slot-automation-ui.cjs` for browser coverage in both apps, including midnight rollover in America/Chicago and mobile layout. Set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` for a custom Chromium executable.
+Open `Iris.html` in a modern browser. Check all four tabs and `Alt+1` through `Alt+4`; create and review a flashcard, complete a habit, add a planner task, and start/pause/reset the focus timer. Check a narrow window and reload to verify saved data. In Focus settings, upload an image, restore the original painting, and switch Scene off/on.
+
+## Font license
+
+IBM Plex Mono is bundled under the SIL Open Font License 1.1. Its full notice is included in `FONT-LICENSE.txt` and inside the self-contained HTML file.
