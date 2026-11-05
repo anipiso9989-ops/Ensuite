@@ -16,7 +16,7 @@ Add daily habits, mark them complete, and track consecutive-day streaks. Undo to
 
 ## Focus
 
-Set work duration, break duration, and cycle count. Start, pause, resume, or reset your session. The timer continues when you switch tools. Choose an image or GIF background, use a direct image URL, restore the original painting, or switch to a plain background. The supplied painting is embedded unchanged and shown at its original color and brightness, with no tint, desaturation, dimming, or blur. The image fills the timer area and may crop to fit the window; compact dark controls provide their own contrast. Ambient recordings include rain, fireplace, river, thunderstorm, crickets, and birds. An optional Spotify player accepts supported Spotify links and remembers your selection after reload.
+Set work duration, break duration, and cycle count. Start, pause, resume, or reset your session. The timer continues when you switch tools. Focus starts with a plain background. Turn Scene on to display the supplied painting, choose an image or GIF background, use a direct image URL, or restore the original painting. The supplied painting is embedded unchanged and shown at its original color and brightness, with no tint, desaturation, dimming, or blur. The image fills the timer area and may crop to fit the window; compact dark controls provide their own contrast. Ambient recordings include rain, fireplace, river, thunderstorm, crickets, and birds. An optional Spotify player accepts supported Spotify links and remembers your selection after reload.
 
 ## Slot
 
@@ -58,9 +58,9 @@ Use **Hide** between **Cram** and **Add Cards** to check cards to exclude from S
 
 ## Appearance
 
-Iris uses a grayscale terminal interface throughout: black and gray surfaces, neutral text and icons, soft borders, and embedded IBM Plex Mono. Compact command-style tool labels, bordered deck and review blocks, an inset habit entry area, and segmented planner views give the tools a consistent hierarchy. Buttons, inputs, empty states, and dialogs share the same surface and spacing language. The focus timer sits in a small opaque control panel over the unmodified painting. Labels and messages are functional, with no decorative copy.
+Iris uses a quiet, grayscale interface with black surfaces, neutral text, thin straight rules, and embedded IBM Plex Mono. Open layouts, simple buttons and inputs, and consistent empty states give each tool the same restrained visual language. Focus starts with a plain background; the original painting remains available through the Scene control.
 
-The workspace fills the browser window with square edges, no outer frame or redundant app-name header, and a dark 64-pixel navigation rail (56 pixels on small screens). A slim edge marker and raised icon background identify the active tool. Hover a tool icon for its label and shortcut; keyboard navigation remains available. Decks, forms, and planner blocks adapt to narrow screens, keyboard focus remains visible, and reduced-motion preferences are respected.
+The workspace fills the browser window with square edges, no outer frame or redundant app-name header, and a dark 64-pixel navigation rail (56 pixels on small screens). A slim edge marker and brighter icon identify the active tool. Hover a tool icon for its label and shortcut; keyboard navigation remains available. Decks, forms, and planner blocks adapt to narrow screens, keyboard focus remains visible, and reduced-motion preferences are respected.
 
 ## Validation
 
