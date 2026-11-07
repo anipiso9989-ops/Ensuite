@@ -11,7 +11,7 @@ body{margin:0;min-width:320px;height:100svh;height:100dvh;padding:0;overflow:hid
 button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
 button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 [hidden]{display:none!important}
-.focus-shell{height:100%;width:100%;display:grid;grid-template-columns:var(--sidebar-width) minmax(0,1fr);grid-template-rows:minmax(0,1fr);border:0;border-radius:0;overflow:hidden;background:var(--bg)}
+.ensuite-shell{height:100%;width:100%;display:grid;grid-template-columns:var(--sidebar-width) minmax(0,1fr);grid-template-rows:minmax(0,1fr);border:0;border-radius:0;overflow:hidden;background:var(--bg)}
 .sidebar{grid-row:1;display:flex;flex-direction:column;background:#111111;border-right:1px solid #282828;min-height:0;overflow-y:auto;scrollbar-width:none;z-index:2}
 .identity{min-height:80px;display:flex;align-items:center;justify-content:center;padding:16px 0;margin-bottom:12px;border-bottom:1px solid #242424}
 .wordmark{font-size:15px;letter-spacing:-.045em;font-weight:500;white-space:nowrap;color:#d4d4d4}
@@ -163,7 +163,7 @@ FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
 OTHER DEALINGS IN THE FONT SOFTWARE.
 
 -->
-<div class="focus-shell">
+<div class="ensuite-shell">
   <aside class="sidebar" aria-label="Ensuite navigation">
     <div class="identity"><div class="wordmark">Ensuite</div><span class="monogram" aria-label="Ensuite">E</span></div>
     <nav class="tabs" role="tablist" aria-label="Study tools" aria-orientation="vertical"><button class="nav-button" id="tab-flashcards" role="tab" aria-selected="true" aria-controls="panel-flashcards" tabindex="0" data-tab="flashcards" title="Flashcards (Alt+1)" aria-label="Flashcards"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="15" height="16" rx="2"/><path d="M16 2H4a2 2 0 0 0-2 2v12M8 10h9M8 14h6"/></svg><span class="nav-text">Flashcards</span></button><button class="nav-button" id="tab-habits" role="tab" aria-selected="false" aria-controls="panel-habits" tabindex="-1" data-tab="habits" title="Habits (Alt+2)" aria-label="Habits"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M7 2v4M17 2v4M3 9h18m-13 6 3 3 5-6"/></svg><span class="nav-text">Habits</span></button><button class="nav-button" id="tab-focus" role="tab" aria-selected="false" aria-controls="panel-focus" tabindex="-1" data-tab="focus" title="Focus (Alt+3)" aria-label="Focus"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6m-3 0v3m6 1 2-2"/></svg><span class="nav-text">Focus</span></button><button class="nav-button" id="tab-slot" role="tab" aria-selected="false" aria-controls="panel-slot" tabindex="-1" data-tab="slot" title="Slot (Alt+4)" aria-label="Slot"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M7 2v4M17 2v4M3 9h18M7 13h4M7 17h8"/></svg><span class="nav-text">Slot</span></button></nav>
@@ -1048,7 +1048,7 @@ input::placeholder{color:#858585}option{background:#1c1c1c;color:#eee}
   <noscript>Ensuite needs JavaScript to run its timer. Please enable it, then refresh.</noscript>
 
 </div></template>
-<template id="focus-theme"><style>
+<template id="ensuite-theme"><style>
 /* Shared workspace tokens. Keep the embedded math fonts and scene untouched. */
 :host {
   --bg:#0d0d0d; --panel:#151515; --raised:#1c1c1c;
@@ -1556,7 +1556,7 @@ let sessionTitle='';
 function selectTool(key,focus=true) {
   if(!toolNames[key])return;
   const previous=document.getElementById(currentTool+'-host');
-  previous.dispatchEvent(new Event('focus:deactivate'));
+  previous.dispatchEvent(new Event('ensuite:deactivate'));
   currentTool=key;
   for(const name of toolKeys){
     const active=name===key,tab=document.getElementById('tab-'+name),panel=document.getElementById('panel-'+name);
@@ -1598,7 +1598,7 @@ function mountTool(key,setup){
   const root=document.getElementById(key+'-host').attachShadow({mode:'open'});
   root.host.dataset.tool=key;
   root.append(document.getElementById('source-'+key).content.cloneNode(true));
-  root.append(document.getElementById('focus-theme').content.cloneNode(true));
+  root.append(document.getElementById('ensuite-theme').content.cloneNode(true));
   setup(root);
 }
 
@@ -2403,7 +2403,7 @@ mountTool('focus', function(root) {
       $('scene-toggle').setAttribute('aria-pressed',String(!plain));
       $('scene-toggle').querySelector('span').textContent=plain?'Scene off':'Scene on';
     });
-    root.host.addEventListener('focus:deactivate',()=>closeSpotifyOptions());
+    root.host.addEventListener('ensuite:deactivate',()=>closeSpotifyOptions());
     $('timer-toggle').addEventListener('click',toggleTimer); $('timer-reset').addEventListener('click',resetTimer);
     $('configure-session').addEventListener('click',()=>openSettings('pomodoro-settings'));
     $('settings-trigger').addEventListener('click',()=>openSettings()); $('settings-close').addEventListener('click',closeSettings);
@@ -3470,7 +3470,7 @@ window.addEventListener('storage',event=>{if(event.key===SlotStore.key&&!busy)ru
 window.addEventListener('focus',()=>catchUp(true));
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)catchUp(true);});
 setInterval(()=>catchUp(),30000);
-root.host.addEventListener('focus:activate',()=>catchUp(true));
+root.host.addEventListener('ensuite:activate',()=>catchUp(true));
 
 
 let slotView='day';
@@ -3530,7 +3530,7 @@ taskForm.elements.duration.addEventListener('input',()=>{
  const duration=Number(taskForm.elements.duration.value);
  if(Number.isInteger(duration)&&duration>0){taskForm.elements.min_chunk.value=Math.min(25,duration);taskForm.elements.max_chunk.value=Math.min(60,duration);}
 });
-root.host.addEventListener('focus:deactivate',()=>{root.querySelectorAll('dialog[open]').forEach(dialog=>dialog.close());});
+root.host.addEventListener('ensuite:deactivate',()=>{root.querySelectorAll('dialog[open]').forEach(dialog=>dialog.close());});
 
 });
 

@@ -4,7 +4,7 @@ Ensuite combines flashcards, daily habits, a Pomodoro timer, and a day and week 
 
 ## Getting started
 
-Download `Focus.html` and open it in a modern browser. No installation, account, or server is required. Keep using the same browser profile and file location to access your saved data. When upgrading from an older filename, export your cards, habits, and planner backups first and import them into `Focus.html` if your browser treats the renamed file as a new storage location. On the same origin, existing databases and preferences remain compatible.
+Download `Ensuite.html` and open it in a modern browser. No installation, account, or server is required. Keep using the same browser profile and file location to access your saved data. When upgrading from an older filename, export your cards, habits, and planner backups first and import them into `Ensuite.html` if your browser treats the renamed file as a new storage location. On the same origin, existing databases and preferences remain compatible.
 
 ## Flashcards
 
@@ -16,7 +16,7 @@ Add daily habits, mark them complete, and track consecutive-day streaks. Undo to
 
 ## Focus timer
 
-Set work duration, break duration, and cycle count. Start, pause, resume, or reset your session. The timer continues when you switch tools. Focus starts with a plain background. Turn Scene on to display the supplied painting, choose an image or GIF background, use a direct image URL, or restore the original painting. The supplied painting is embedded unchanged and shown at its original color and brightness, with no tint, desaturation, dimming, or blur. The image fills the timer area and may crop to fit the window; compact dark controls provide their own contrast. Ambient recordings include rain, fireplace, river, thunderstorm, crickets, and birds. An optional Spotify player accepts supported Spotify links and remembers your selection after reload.
+Set work duration, break duration, and cycle count. Start, pause, resume, or reset your session. The timer continues when you switch tools. The timer starts with a plain background. Turn Scene on to display the supplied painting, choose an image or GIF background, use a direct image URL, or restore the original painting. The supplied painting is embedded unchanged and shown at its original color and brightness, with no tint, desaturation, dimming, or blur. The image fills the timer area and may crop to fit the window; compact dark controls provide their own contrast. Ambient recordings include rain, fireplace, river, thunderstorm, crickets, and birds. An optional Spotify player accepts supported Spotify links and remembers your selection after reload.
 
 ## Slot
 
@@ -64,7 +64,7 @@ The workspace fills the browser window with square edges, no outer frame or redu
 
 ## Validation
 
-Open `Focus.html` in a modern browser. Check all four tabs and `Alt+1` through `Alt+4`; create and review a flashcard, complete a habit, add a planner task, and start/pause/reset the focus timer. Check a narrow window and reload to verify saved data. In Focus settings, upload an image, restore the original painting, and switch Scene off/on.
+Open `Ensuite.html` in a modern browser. Check all four tabs and `Alt+1` through `Alt+4`; create and review a flashcard, complete a habit, add a planner task, and start/pause/reset the focus timer. Check a narrow window and reload to verify saved data. In Focus settings, upload an image, restore the original painting, and switch Scene off/on.
 
 ## Font license
 
