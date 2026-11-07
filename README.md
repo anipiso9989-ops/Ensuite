@@ -1,6 +1,6 @@
-# Focus
+# Ensuite
 
-Focus combines flashcards, daily habits, a Pomodoro timer, and a day and week planner in one self-contained HTML workspace. A persistent sidebar switches between all four tools without interrupting your focus timer.
+Ensuite combines flashcards, daily habits, a Pomodoro timer, and a day and week planner in one self-contained HTML workspace. A persistent sidebar switches between all four tools without interrupting your focus timer.
 
 ## Getting started
 
@@ -46,7 +46,7 @@ Use `Alt+1`, `Alt+2`, `Alt+3`, and `Alt+4` to switch to Flashcards, Habits, Focu
 
 Flashcards, habits, and Slot save in your browser. Export JSON backups regularly, especially before moving devices, clearing browser storage, or importing data. Each tool uses its own compatible backup format. Importing replaces that tool's current data. Slot's backup controls are under **Settings → Backups & storage**.
 
-Slot backups include task recurrence rules and occurrence history, permanent weekday availability, date overrides, kept times, rollover metadata, single-block preferences, checklists, and recurring commitments. Slot backups are interchangeable between the standalone planner and the Focus workspace. Older backups still load with no task recurrences or weekday rules; timed tasks keep their chunk settings, and checklist blocks default to a single-session preference.
+Slot backups include task recurrence rules and occurrence history, permanent weekday availability, date overrides, kept times, rollover metadata, single-block preferences, checklists, and recurring commitments. Slot backups are interchangeable between the standalone planner and the Ensuite workspace. Older backups still load with no task recurrences or weekday rules; timed tasks keep their chunk settings, and checklist blocks default to a single-session preference.
 
 ## Offline use
 
@@ -58,7 +58,7 @@ Use **Hide** between **Cram** and **Add Cards** to check cards to exclude from S
 
 ## Appearance
 
-Focus uses a quiet, grayscale interface with black surfaces, neutral text, thin straight rules, and embedded IBM Plex Mono. Open layouts, simple buttons and inputs, and consistent empty states give each tool the same restrained visual language. The timer starts with a plain background; the original painting remains available through the Scene control.
+Ensuite uses a quiet, grayscale interface with black surfaces, neutral text, thin straight rules, and embedded IBM Plex Mono. Open layouts, simple buttons and inputs, and consistent empty states give each tool the same restrained visual language. The timer starts with a plain background; the original painting remains available through the Scene control.
 
 The workspace fills the browser window with square edges, no outer frame or redundant app-name header, and a dark 64-pixel navigation rail (56 pixels on small screens). A slim edge marker and brighter icon identify the active tool. Hover a tool icon for its label and shortcut; keyboard navigation remains available. Decks, forms, and planner blocks adapt to narrow screens, keyboard focus remains visible, and reduced-motion preferences are respected.
 
