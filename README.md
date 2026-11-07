@@ -1,10 +1,10 @@
-# Iris
+# Focus
 
-Iris combines flashcards, daily habits, a Pomodoro timer, and a day and week planner in one self-contained HTML workspace. A persistent sidebar switches between all four tools without interrupting your focus timer.
+Focus combines flashcards, daily habits, a Pomodoro timer, and a day and week planner in one self-contained HTML workspace. A persistent sidebar switches between all four tools without interrupting your focus timer.
 
 ## Getting started
 
-Download `Iris.html` and open it in a modern browser. No installation, account, or server is required. Keep using the same browser profile and file location to access your saved data. When upgrading from an older filename, export your cards, habits, and planner backups first and import them into `Iris.html` if your browser treats the renamed file as a new storage location. On the same origin, existing databases and preferences remain compatible.
+Download `Focus.html` and open it in a modern browser. No installation, account, or server is required. Keep using the same browser profile and file location to access your saved data. When upgrading from an older filename, export your cards, habits, and planner backups first and import them into `Focus.html` if your browser treats the renamed file as a new storage location. On the same origin, existing databases and preferences remain compatible.
 
 ## Flashcards
 
@@ -14,7 +14,7 @@ Create named decks and enter one card per line using `front::back`. Both sides s
 
 Add daily habits, mark them complete, and track consecutive-day streaks. Undo today's completion when necessary. Habits can also be renamed or deleted.
 
-## Focus
+## Focus timer
 
 Set work duration, break duration, and cycle count. Start, pause, resume, or reset your session. The timer continues when you switch tools. Focus starts with a plain background. Turn Scene on to display the supplied painting, choose an image or GIF background, use a direct image URL, or restore the original painting. The supplied painting is embedded unchanged and shown at its original color and brightness, with no tint, desaturation, dimming, or blur. The image fills the timer area and may crop to fit the window; compact dark controls provide their own contrast. Ambient recordings include rain, fireplace, river, thunderstorm, crickets, and birds. An optional Spotify player accepts supported Spotify links and remembers your selection after reload.
 
@@ -46,7 +46,7 @@ Use `Alt+1`, `Alt+2`, `Alt+3`, and `Alt+4` to switch to Flashcards, Habits, Focu
 
 Flashcards, habits, and Slot save in your browser. Export JSON backups regularly, especially before moving devices, clearing browser storage, or importing data. Each tool uses its own compatible backup format. Importing replaces that tool's current data. Slot's backup controls are under **Settings → Backups & storage**.
 
-Slot backups include task recurrence rules and occurrence history, permanent weekday availability, date overrides, kept times, rollover metadata, single-block preferences, checklists, and recurring commitments. Current standalone Slot and Iris backups are interchangeable. Older backups still load with no task recurrences or weekday rules; timed tasks keep their chunk settings, and checklist blocks default to a single-session preference.
+Slot backups include task recurrence rules and occurrence history, permanent weekday availability, date overrides, kept times, rollover metadata, single-block preferences, checklists, and recurring commitments. Slot backups are interchangeable between the standalone planner and the Focus workspace. Older backups still load with no task recurrences or weekday rules; timed tasks keep their chunk settings, and checklist blocks default to a single-session preference.
 
 ## Offline use
 
@@ -58,13 +58,13 @@ Use **Hide** between **Cram** and **Add Cards** to check cards to exclude from S
 
 ## Appearance
 
-Iris uses a quiet, grayscale interface with black surfaces, neutral text, thin straight rules, and embedded IBM Plex Mono. Open layouts, simple buttons and inputs, and consistent empty states give each tool the same restrained visual language. Focus starts with a plain background; the original painting remains available through the Scene control.
+Focus uses a quiet, grayscale interface with black surfaces, neutral text, thin straight rules, and embedded IBM Plex Mono. Open layouts, simple buttons and inputs, and consistent empty states give each tool the same restrained visual language. The timer starts with a plain background; the original painting remains available through the Scene control.
 
 The workspace fills the browser window with square edges, no outer frame or redundant app-name header, and a dark 64-pixel navigation rail (56 pixels on small screens). A slim edge marker and brighter icon identify the active tool. Hover a tool icon for its label and shortcut; keyboard navigation remains available. Decks, forms, and planner blocks adapt to narrow screens, keyboard focus remains visible, and reduced-motion preferences are respected.
 
 ## Validation
 
-Open `Iris.html` in a modern browser. Check all four tabs and `Alt+1` through `Alt+4`; create and review a flashcard, complete a habit, add a planner task, and start/pause/reset the focus timer. Check a narrow window and reload to verify saved data. In Focus settings, upload an image, restore the original painting, and switch Scene off/on.
+Open `Focus.html` in a modern browser. Check all four tabs and `Alt+1` through `Alt+4`; create and review a flashcard, complete a habit, add a planner task, and start/pause/reset the focus timer. Check a narrow window and reload to verify saved data. In Focus settings, upload an image, restore the original painting, and switch Scene off/on.
 
 ## Font license
 
